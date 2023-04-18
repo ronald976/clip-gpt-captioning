@@ -1,5 +1,13 @@
 # CLIPxGPT Captioner
 
+fork of https://github.com/jmisilo/clip-gpt-captioning that adds a larger model with open_clip's ViT-G/14(https://github.com/mlfoundations/open_clip) and gpt2-xl. 
+
+As these embeddings do not have the same length, a linear layer was added to the start of the mapping network. 
+
+The mapping module was trained on an NVIDIA RTX A6000. 
+
+
+
 ## Description
 
 **`CLIPxGPT Captioner`** is Image Captioning Model based on [OpenAI's](https://openai.com/) [CLIP](https://openai.com/blog/clip/) and [GPT-2](https://openai.com/blog/better-language-models/). The Model uses a Mapping module to "translate" CLIP embeddings ​​to GPT-2. The model is trained on the [Flickr30k](https://shannon.cs.illinois.edu/DenotationGraph/) dataset, downloaded from [Kaggle](https://www.kaggle.com/datasets/hsankesara/flickr-image-dataset)
@@ -26,44 +34,3 @@ The training process was carried out using the [Kaggle](https://www.kaggle.com/)
 > * CLIP Large - Patch 14 model
 > * 736M Parameters
 
-## Example results
-
-![Example1](./examples/23012796-RS.jpg)
-![Example2](./examples/36979-RS.jpg)
-![Example3](./examples/89407459-RL.jpg)
-
-## Usage
-
-Clone repository using:
-
-```bash
-git clone https://github.com/jmisilo/clip-gpt-captioning
-
-cd clip-gpt-captioning
-```
-
-Create environment and install requirements:
-
-```bash
-python -m venv venv
-# for windows
-.\venv\Scripts\activate
-# for linux/mac
-source venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-And run prediction:
-
-```bash
-python .\src\predict.py -I <image_path> -S <model_size [S/L]> -C <checkpoint_name>
-```
-
-### References:
-
-- [OpenAI](https://openai.com/)
-- [CLIP](https://openai.com/blog/clip/)
-- [GPT-2](https://openai.com/blog/better-language-Models/)
-- [ClipCap; Mokady, Ron and Hertz, Amir and Bermano, Amit H](https://arxiv.org/abs/2111.09734)
-- [HuggingFace](https://huggingface.co/)
