@@ -1,6 +1,6 @@
 # CLIPxGPT Captioner
 
-fork of https://github.com/jmisilo/clip-gpt-captioning that adds a larger model with open_clip's ViT-G/14(https://github.com/mlfoundations/open_clip) and gpt2-xl. 
+fork of https://github.com/jmisilo/clip-gpt-captioning that adds a larger model with open_clip's [ViT-G/14](https://github.com/mlfoundations/open_clip) and gpt2-xl. 
 
 As these embeddings do not have the same length, a linear layer was added to the start of the mapping network. 
 
