@@ -52,3 +52,29 @@ class ConfigL:
     max_len: int = 40
     dropout: float = 0.08
     weights_dir: str = os.path.join('weights', 'large')
+
+@dataclass
+class ConfigG:
+    '''
+        Project's main config.
+    '''
+
+    clip_model: str = 'laion/CLIP-ViT-g-14-laion2B-s12B-b42K'
+    text_model: str = 'gpt2-xl'
+    seed: int = 100
+    num_workers: int = 2
+    train_size: int = 0.84 # type and value are mismatched, but value still seems to be loaded as float without issue. 
+    val_size: int = 0.13
+    epochs: int = 300
+    lr: int = 5e-3
+    k: float = 0.3
+    batch_size_exp: int = 4
+    ep_len: int = 4
+    num_layers: int = 5
+    n_heads: int = 16
+    forward_expansion: int = 4
+    max_len: int = 40
+    dropout: float = 0.08
+    weights_dir: str = os.path.join('weights', 'g')
+
+
